@@ -10,6 +10,9 @@
             <tr>
                 <th>Id</th>
                 <td>{{ user.id }}</td>
+            </tr>            <tr>
+            <th>Name</th>
+                <td>{{ user.nickname }}</td>
             </tr>
             <tr>
                 <th>Email</th>
@@ -18,10 +21,6 @@
             <tr>
                 <th>Roles</th>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
             </tr>
         </tbody>
     </table>
