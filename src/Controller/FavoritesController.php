@@ -6,10 +6,11 @@ use App\Entity\Favorites;
 use App\Form\FavoritesType;
 use App\Repository\FavoritesRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/favorites')]
 class FavoritesController extends AbstractController
@@ -78,4 +79,10 @@ class FavoritesController extends AbstractController
 
         return $this->redirectToRoute('app_favorites_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    private function createFavoritesForm(Favorites $favorite): FormInterface
+{
+    return $this->createForm(FavoritesType::class, $favorite);
+}
+
 }

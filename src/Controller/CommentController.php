@@ -6,10 +6,11 @@ use App\Entity\Comment;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/comment')]
 class CommentController extends AbstractController
@@ -78,4 +79,10 @@ class CommentController extends AbstractController
 
         return $this->redirectToRoute('app_comment_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    private function createCommentForm(Comment $comment): FormInterface
+{
+    return $this->createForm(CommentType::class, $comment);
+}
+
 }

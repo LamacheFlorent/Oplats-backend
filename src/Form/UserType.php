@@ -26,7 +26,6 @@ class UserType extends AbstractType
                 'choices' => [
 
                     'Utilisateur' => 'ROLE_USER',
-                    'Manager' => 'ROLE_MANAGER',
                     'Administrateur' => 'ROLE_ADMIN',
                 ],
 
@@ -58,7 +57,6 @@ class UserType extends AbstractType
                         'choices' => [
 
                             'Utilisateur' => 'ROLE_USER',
-                            'Manager' => 'ROLE_MANAGER',
                             'Administrateur' => 'ROLE_ADMIN',
                         ],
 
